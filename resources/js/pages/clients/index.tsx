@@ -205,15 +205,15 @@ export default function ClientsIndex({ clients }: ClientsPageProps) {
                         </div>
 
                         <div className="overflow-x-auto">
-                            <table className="w-full border-collapse text-left">
+                            <table className="w-full min-w-[950px] border-collapse text-left">
                                 <thead>
-                                    <tr className="border-b text-sm text-slate-500">
-                                        <th className="py-3">Name</th>
-                                        <th className="py-3">Email</th>
-                                        <th className="py-3">Phone</th>
-                                        <th className="py-3">Company</th>
-                                        <th className="py-3">Status</th>
-                                        <th className="py-3 text-right">
+                                    <tr className="border-b bg-slate-50 text-sm text-slate-500">
+                                        <th className="px-4 py-3">Name</th>
+                                        <th className="px-4 py-3">Email</th>
+                                        <th className="px-4 py-3">Phone</th>
+                                        <th className="px-4 py-3">Company</th>
+                                        <th className="px-4 py-3">Status</th>
+                                        <th className="px-4 py-3 text-right">
                                             Action
                                         </th>
                                     </tr>
@@ -224,7 +224,7 @@ export default function ClientsIndex({ clients }: ClientsPageProps) {
                                         <tr>
                                             <td
                                                 colSpan={6}
-                                                className="py-8 text-center text-slate-500"
+                                                className="px-4 py-8 text-center text-slate-500"
                                             >
                                                 No clients yet. Add your first
                                                 client.
@@ -235,26 +235,31 @@ export default function ClientsIndex({ clients }: ClientsPageProps) {
                                     {clients.map((client) => (
                                         <tr
                                             key={client.id}
-                                            className="border-b"
+                                            className="border-b hover:bg-slate-50"
                                         >
-                                            <td className="py-4 font-semibold">
+                                            <td className="whitespace-nowrap px-4 py-4 font-semibold">
                                                 {client.name}
                                             </td>
-                                            <td className="py-4 text-slate-500">
+
+                                            <td className="whitespace-nowrap px-4 py-4 text-slate-500">
                                                 {client.email || '-'}
                                             </td>
-                                            <td className="py-4 text-slate-500">
+
+                                            <td className="whitespace-nowrap px-4 py-4 text-slate-500">
                                                 {client.phone || '-'}
                                             </td>
-                                            <td className="py-4 text-slate-500">
+
+                                            <td className="whitespace-nowrap px-4 py-4 text-slate-500">
                                                 {client.company || '-'}
                                             </td>
-                                            <td className="py-4">
+
+                                            <td className="whitespace-nowrap px-4 py-4">
                                                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-600">
                                                     {client.status}
                                                 </span>
                                             </td>
-                                            <td className="py-4 text-right">
+
+                                            <td className="whitespace-nowrap px-4 py-4 text-right">
                                                 <button
                                                     onClick={() =>
                                                         handleDelete(client)
@@ -269,6 +274,11 @@ export default function ClientsIndex({ clients }: ClientsPageProps) {
                                 </tbody>
                             </table>
                         </div>
+
+                        <p className="mt-4 text-xs text-slate-400">
+                            Tip: if the table is wider than the card, scroll
+                            horizontally to see all columns.
+                        </p>
                     </div>
                 </div>
             </div>
